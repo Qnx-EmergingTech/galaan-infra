@@ -1,0 +1,9 @@
+---
+- hosts: all
+
+  tasks:
+    - name: Deploy
+      ansible.builtin.shell: |
+        cd deploy/backend
+        docker pull ghcr.io/Qnx-EmergingTech/Galaan:dev
+        docker compose up -d
