@@ -1,0 +1,8 @@
+---
+- hosts: all
+
+  tasks:
+    - name: Stop containers
+      ansible.builtin.shell: |
+        cd deploy/frontend
+        docker compose stop
