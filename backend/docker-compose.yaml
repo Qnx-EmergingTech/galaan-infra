@@ -12,7 +12,7 @@ services:
     restart: always
 
   web:
-    build: .
+    image: ghcr.io/qnx-emergingtech/galaan:dev
     command: python3 manage.py runserver  0.0.0.0:8000
     volumes:
       - .:/app
