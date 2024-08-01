@@ -5,5 +5,5 @@
     - name: Deploy
       ansible.builtin.shell: |
         cd deploy/backend
-        docker pull ghcr.io/Qnx-EmergingTech/Galaan:dev
+        docker pull ghcr.io/qnx-emergingtech/galaan:dev
         docker compose up -d
