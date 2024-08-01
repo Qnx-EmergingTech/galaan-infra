@@ -1,0 +1,8 @@
+all:
+  children:
+    ubuntu:
+      hosts:
+        54.179.130.190:
+      vars:
+        ansible_connection: ssh
+        ansible_user: ubuntu
