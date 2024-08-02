@@ -1,36 +1,17 @@
-version: '3.8'
-
+version: '3'
 services:
-  db:
-    image: postgres:13
-    environment:
-      POSTGRES_DB: galaan
-      POSTGRES_USER: luise
-      POSTGRES_PASSWORD: docker
-    volumes:
-      - postgres_data:/var/lib/postgresql/data/
-    restart: always
-
-  web:
-    image: ghcr.io/qnx-emergingtech/galaan:dev
-    command: python3 manage.py runserver  0.0.0.0:8000
-    volumes:
-      - .:/app
+  app:
+    build: .
     ports:
-      - "8000:8000"
-    depends_on:
-      - db
+      - '5000:5000'
     restart: always
-
   nginx:
     image: nginx:latest
+    ports:
+      - '8080:80'
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
-    ports:
-      - "80:80"
+      - ./app:/app
     depends_on:
-      - web
+      - app
     restart: always
-
-volumes:
-  postgres_data:
