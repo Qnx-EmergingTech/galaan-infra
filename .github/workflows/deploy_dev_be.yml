@@ -1,5 +1,10 @@
 name: deploy-be-dev
 on:
+  registry_package:
+    types: [published]
+    package_name:
+      - "galaan:dev"
+
   workflow_dispatch:
 
 jobs:
