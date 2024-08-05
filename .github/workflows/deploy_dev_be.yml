@@ -3,7 +3,7 @@ on:
   registry_package:
     types: [published]
     package_name:
-      - "galaan:dev"
+      - "galaan"
 
   workflow_dispatch:
 
