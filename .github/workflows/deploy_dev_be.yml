@@ -1,7 +1,5 @@
 name: deploy-be-dev
 on:
-  package:
-    types: [published, updated]
   registry_package:
     types: [published, updated]
       # name:
