@@ -7,3 +7,4 @@
         cd deploy/backend
         docker pull ghcr.io/qnx-emergingtech/galaan:dev
         docker compose up -d
+        docker compose exec web python3 manage.py migrate
